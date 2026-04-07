@@ -1,8 +1,3 @@
-###############################################################
-# terraform.tfvars  —  Dev environment values
-# DO NOT commit secrets (github_token) — use TF_VAR_ env vars
-###############################################################
-
 project_name = "rag-agent"
 environment  = "dev"
 aws_region   = "us-east-1"
