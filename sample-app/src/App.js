@@ -34,6 +34,13 @@ function App() {
           excerpt: 'Related information regarding "' + query + '" from your knowledge base',
           content: 'This is the FULL text for Document 3. It discusses vector database optimization.',
           score: 0.78
+        },
+        {
+          id: 4,
+          title: 'Sample Document 4',
+          excerpt: 'Additional information about "' + query + '"',
+          content: 'This is the FULL text for Document 4. It provides further insights into the topic.',
+          score: 0.65
         }
       ]);
       setLoading(false);
