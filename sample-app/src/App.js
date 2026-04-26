@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <header className="header">
         <div className="header-content">
-          <h1>🤖 RAG Agent Platform Live</h1>
+          <h1>🤖 RAG Agent Platform</h1>
           <p>Intelligent Document Retrieval & Analysis Demo</p>
         </div>
       </header>
