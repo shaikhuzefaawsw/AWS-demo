@@ -12,17 +12,18 @@ resource "aws_amplify_app" "main" {
       phases:
         preBuild:
           commands:
-            - npm ci
+            - cd sample-app
+            - npm install
         build:
           commands:
             - npm run build
       artifacts:
-        baseDirectory: build
+        baseDirectory: sample-app/build
         files:
           - '**/*'
       cache:
         paths:
-          - node_modules/**/*
+          - sample-app/node_modules/**/*
   EOT
 
   repository  = var.github_repo != "" ? var.github_repo : null
@@ -69,8 +70,4 @@ resource "aws_amplify_backend_environment" "github" {
 
   deployment_artifacts = aws_amplify_app.main.name
   stack_name           = "${var.project_name}-${var.environment}"
-
-  tags = merge(var.tags, {
-    Name = "${var.project_name}-${var.environment}-backend"
-  })
 }

@@ -8,6 +8,7 @@
 .env.local
 build/
 node_modules/
+terraform.local.tfvars
 
 # Sensitive variable files
 *.tfvars.json
@@ -24,3 +25,4 @@ crash.*.log
 # OS junk
 .DS_Store
 Thumbs.db
+AWSCLIV2.msi

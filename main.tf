@@ -28,17 +28,18 @@ module "cognito" {
   tags         = local.common_tags
 }
 
-module "opensearch" {
-  source                    = "./modules/opensearch"
-  project_name              = var.project_name
-  environment               = var.environment
-  opensearch_instance_type  = var.opensearch_instance_type
-  opensearch_instance_count = var.opensearch_instance_count
-  opensearch_volume_size    = var.opensearch_volume_size
-  account_id                = data.aws_caller_identity.current.account_id
-  aws_region                = var.aws_region
-  tags                      = local.common_tags
-}
+# Temporarily commented out OpenSearch for faster free tier deployment
+# module "opensearch" {
+#   source                    = "./modules/opensearch"
+#   project_name              = var.project_name
+#   environment               = var.environment
+#   opensearch_instance_type  = var.opensearch_instance_type
+#   opensearch_instance_count = var.opensearch_instance_count
+#   opensearch_volume_size    = var.opensearch_volume_size
+#   account_id                = data.aws_caller_identity.current.account_id
+#   aws_region                = var.aws_region
+#   tags                      = local.common_tags
+# }
 
 module "ecs" {
   source                    = "./modules/ecs"

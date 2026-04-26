@@ -32,10 +32,11 @@ output "ecs_service_name" {
   value       = module.ecs.service_name
 }
 
-output "opensearch_endpoint" {
-  description = "OpenSearch domain endpoint"
-  value       = module.opensearch.endpoint
-}
+# Temporarily commented out - OpenSearch not deployed for demo
+# output "opensearch_endpoint" {
+#   description = "OpenSearch domain endpoint"
+#   value       = module.opensearch.endpoint
+# }
 
 output "s3_document_bucket" {
   description = "S3 bucket for RAG document storage"
