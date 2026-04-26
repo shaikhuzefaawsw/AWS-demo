@@ -75,3 +75,22 @@ variable "opensearch_volume_size" {
   default     = 20
 }
 
+# ── Amplify / GitHub ──────────────────────────────────────
+variable "github_token" {
+  description = "GitHub personal access token for Amplify CI/CD (optional)"
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
+variable "github_repo" {
+  description = "GitHub repository URL for Amplify (e.g., https://github.com/username/repo)"
+  type        = string
+  default     = ""
+}
+
+variable "github_branch" {
+  description = "GitHub branch to deploy from in Amplify"
+  type        = string
+  default     = "main"
+}

@@ -81,5 +81,8 @@ module "amplify" {
   source       = "./modules/amplify"
   project_name = var.project_name
   environment  = var.environment
+  github_token = var.github_token
+  github_repo  = var.github_repo
+  github_branch = var.github_branch
   tags         = local.common_tags
 }

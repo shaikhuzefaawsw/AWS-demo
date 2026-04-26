@@ -25,6 +25,9 @@ resource "aws_amplify_app" "main" {
           - node_modules/**/*
   EOT
 
+  repository  = var.github_repo != "" ? var.github_repo : null
+  oauth_token = var.github_token != "" ? var.github_token : null
+
   custom_rule {
     source = "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|map|json)$)([^.]+$)/>"
     status = "200"
@@ -43,13 +46,31 @@ resource "aws_amplify_app" "main" {
   })
 }
 
+# GitHub connection (if token and repo are provided)
 resource "aws_amplify_branch" "main" {
   app_id      = aws_amplify_app.main.id
-  branch_name = var.environment == "prod" ? "main" : var.environment
+  branch_name = var.github_branch
   framework   = "React"
   stage       = var.environment == "prod" ? "PRODUCTION" : "DEVELOPMENT"
 
+  # Enable auto build for GitHub-connected branches
+  enable_auto_build = var.github_token != "" ? true : false
+
   tags = merge(var.tags, {
     Name = "${var.project_name}-${var.environment}-branch"
+  })
+}
+
+# GitHub repository connection (optional)
+resource "aws_amplify_backend_environment" "github" {
+  count           = var.github_token != "" ? 1 : 0
+  app_id          = aws_amplify_app.main.id
+  environment_name = var.environment
+
+  deployment_artifacts = aws_amplify_app.main.name
+  stack_name           = "${var.project_name}-${var.environment}"
+
+  tags = merge(var.tags, {
+    Name = "${var.project_name}-${var.environment}-backend"
   })
 }

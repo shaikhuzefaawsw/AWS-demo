@@ -4,6 +4,10 @@
 *.tfstate.backup
 .terraform/
 .terraform.lock.hcl
+*.tfvars.secret
+.env.local
+build/
+node_modules/
 
 # Sensitive variable files
 *.tfvars.json
