@@ -23,6 +23,6 @@ opensearch_volume_size    = 20
 # github_repo  = "https://gith1ub.com/YOUR_USERNAME/YOUR_REPO"
 # github_branch = "main"
 
-github_token = "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"
+github_token = ""
 github_repo  = "https://github.com/shaikhuzefaawsw/AWS-demo"
 github_branch = "master"
