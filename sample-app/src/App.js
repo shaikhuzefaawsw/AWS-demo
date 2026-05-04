@@ -5,15 +5,7 @@ import { Amplify } from 'aws-amplify';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
-// FIX 1: Properly closed the configuration function
-Amplify.configure({
-  Auth: {
-    Cognito: {
-      userPoolId: 'us-east-1_j58gaJOfb',      
-      userPoolClientId: '6g7qha944etap41454shumutc7'
-    }
-  }
-});
+
 
 function App() {
   const [query, setQuery] = useState('');
