@@ -68,7 +68,7 @@ function App() {
         <div className="App">
           <header className="header">
             <div className="header-content">
-              <h1>🤖 RAG Agent Platform live</h1>
+              <h1>🤖 RAG Agent Demo with Shalabh</h1>
               <p>Intelligent Document Retrieval & Analysis Demo</p>
               
               {/* Added a welcome message and sign out for your demo */}
