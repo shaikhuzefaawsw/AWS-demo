@@ -43,7 +43,7 @@ function App() {
         <div className="App">
           <header className="header">
             <div className="header-content">
-              <h1>🤖 RAG Agent Platform live with shalab</h1>
+              <h1>🤖 RAG Agent Platform live</h1>
               <p>Intelligent Document Retrieval & Analysis Demo</p>
               
               {/* ADDED: Show user email and Sign Out button for the RM demo */}
