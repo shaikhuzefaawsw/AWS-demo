@@ -43,7 +43,7 @@ function App() {
         <div className="App">
           <header className="header">
             <div className="header-content">
-              <h1>🤖 RAG Agent Platform live</h1>
+              <h1>🤖 RAG Agent Platform live with shalbah </h1>
               <p>Intelligent Document Retrieval & Analysis Demo</p>
               
               {/* ADDED: Show user email and Sign Out button for the RM demo */}
@@ -67,7 +67,7 @@ function App() {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Ask a question about your documents..."
+                  placeholder="Ask a question about your documents and information and File..."
                   className="search-input"
                 />
                 <button type="submit" className="search-button" disabled={loading}>
@@ -126,7 +126,7 @@ function App() {
           </main>
 
           <footer className="footer">
-            <p>RAG Agent Platform v0.1.0 • Deployed on AWS Amplify</p>
+            <p>RAG Agent Platform v0.1.1 • Deployed on AWS Amplify</p>
           </footer>
         </div>
       )}
